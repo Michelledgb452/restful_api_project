@@ -41,6 +41,7 @@ const createArticle = async (title, content, UserId)=>{
         }
         return newArticle
     }catch(error){
+        console.log(error)
         throw {status: 500, message:  error.message || "Article could not be created"}
     }
 }

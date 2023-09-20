@@ -10,12 +10,12 @@ const router = Router(); //Llamamos al método Router de Express
 
 router.get("/", articleController.getAllArticles);
 
-router.get("/:articleId", articleController.getArticle);
+router.get("/ArticleId", articleController.getArticle);
 
 router.post("/", articleController.createArticle);
 
-router.put("/:articleId", articleController.updateArticle);
+router.put("/:ArticleId", articleController.updateArticle);
 
-router.delete("/:articleId", articleController.deleteArticle);
+router.delete("/:ArticleId", articleController.deleteArticle);
 
 module.exports = router;

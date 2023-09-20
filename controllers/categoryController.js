@@ -12,7 +12,7 @@ const getAllCategories = async(req,res)=>{
 
 const getCategory = async(req,res)=>{
     try{
-        let id = req.params. categoryId
+        let id = req.params. CategoryId
         const Category = await categoryService.getCategory(id)
         res.status(200).send({status: 'OK', data:Category})
     }catch(error){
@@ -32,7 +32,7 @@ const createCategory = async (req,res)=>{
 
 const updateCategory = async (req, res)=>{
     try{
-        const id = req.params.categoryId
+        const id = req.params.CategoryId
         let {name} = req.body;
         const updatedCategory = await categoryService.updateCategory(id, name)
         res.status(200).send({status: 'OK', data:updatedCategory})
@@ -43,7 +43,7 @@ const updateCategory = async (req, res)=>{
 
 const deleteCategory = async (req, res)=>{
     try{
-        const id = req.params.categoryId
+        const id = req.params.CategoryId
         const deletedCategory =  await categoryService.deleteCategory(id)
         res.status(200).send({status: 'OK', data:deletedCategory})
     }catch(error){

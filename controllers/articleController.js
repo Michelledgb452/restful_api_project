@@ -12,7 +12,7 @@ const getAllArticles = async(req,res)=>{
 
 const getArticle = async(req,res)=>{
     try{
-        let id = req.params.articleId
+        let id = req.params.ArticleId
         const article = await articleService.getArticle(id)
         res.status(200).send({status: 'OK', data:article})
     }catch(error){
@@ -32,7 +32,7 @@ const createArticle = async (req,res)=>{
 
 const updateArticle = async (req, res)=>{
     try{
-        const id = req.params.articleId
+        const id = req.params.ArticleId
         let {title,content,UserId} = req.body;
         const updatedArticle = await articleService.updateArticle(id, title, content, UserId)
         res.status(200).send({status: 'OK', data:updatedArticle})
@@ -43,7 +43,7 @@ const updateArticle = async (req, res)=>{
 
 const deleteArticle = async (req, res)=>{
     try{
-        const id = req.params.articleId
+        const id = req.params.ArticleId
         const deletedArticle =  await articleService.deleteArticle(id)
         res.status(200).send({status: 'OK', data:deletedArticle})
     }catch(error){
