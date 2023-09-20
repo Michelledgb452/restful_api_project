@@ -24,7 +24,7 @@ const createUser = async (req,res)=>{
         const { name, email, phone, password } = req.body       
         const {body} = req
         //console.log(body.name)
-        const createUser = await userService.createUser(body.name, body.email, body.phone, body.password)
+        const createUser = await userService.createUser(name, body.email, body.phone, body.password)
         res.status(201).send({status: 'OK', data:createUser})
     }catch(error){
         res.status(error.status || 500).send({status: 'FAILED', data: { error: error.message} })
